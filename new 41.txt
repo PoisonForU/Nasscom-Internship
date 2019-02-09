@@ -1,0 +1,25 @@
+ class Customer  {    
+    JFrame f;    
+    TableShow(){    
+    f=new JFrame();    
+    String data[][]={ {String.valueOf(pro_id),pro_des,pro_type,pro_manu_dae,String.valueOf(pro_ware_house)}};    
+    String column[]={"warehouse_id","pro_desc","warehouse_type","warehouse_storage_date","pro_id"};      
+    JTable jt=new JTable(data,column);    
+    jt.setBounds(30,40,200,300);          
+    JScrollPane sp = new JScrollPane(jt);    
+    f.add(sp);          
+    f.setSize(300,400);    
+    f.setVisible(true);    
+	}     
+	
+	TableShow(DefaultTableModel model)
+	{
+		f=new JFrame(); 
+		JTable jt=new JTable(model);    
+		jt.setBounds(30,40,200,300);          
+		JScrollPane sp = new JScrollPane(jt);    
+		f.add(sp);          
+		f.setSize(300,400);    
+		f.setVisible(true);    
+	}
+}

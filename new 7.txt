@@ -1,0 +1,65 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class Employee extends JFrame{
+	JTextField tf1,tf2,tf3,tf4;
+	JPasswordField pf1,pf2;
+	JLabel l1,l2,l3,l4,l5,l6,l7;
+	JButton b1;
+	Employee(){
+		getContentPane().setBackground(Color.gray);	//color Background
+		l7=new JLabel("SignUp Page");
+		l7.setBounds(450,50,500,50);
+		l7.setFont(new Font("Serif", Font.BOLD, 24));
+		add(l7);
+		l1=new JLabel("Employee id");
+		l1.setBounds(100,150,150,25);
+		add(l1);
+		tf1=new JTextField();
+		tf1.setBounds(250,150,150,25);
+        add(tf1);
+		l2=new JLabel("Employee name");
+		l2.setBounds(600,150,150,25);
+		add(l2);
+		tf2=new JTextField();
+		tf2.setBounds(750,150,150,25);
+        add(tf2);
+		l3=new JLabel("Password");
+		l3.setBounds(100,225,150,25);
+		add(l3);
+		pf1=new JPasswordField();
+		pf1.setBounds(250,225,150,25);
+        add(pf1);
+		l4=new JLabel("Conform Password");
+		l4.setBounds(600,225,150,25);
+		add(l4);
+		pf1=new JPasswordField();
+		pf1.setBounds(750,225,150,25);
+        add(pf1);
+		l5=new JLabel("Mobile Number");
+		l5.setBounds(100,300,150,25);
+		add(l5);
+		tf3=new JTextField();
+		tf3.setBounds(250,300,150,25);
+        add(tf3);
+		l6=new JLabel("Employee id");
+		l6.setBounds(600,300,150,25);
+		add(l6);
+		tf4=new JTextField();
+		tf4.setBounds(750,300,150,25);
+        add(tf4);
+		b1=new JButton("SignUp");  
+        b1.setBounds(400,400,150,50);
+		add(b1);
+		Color lightBlue= new Color(0,0,50,50);
+		b1.setBackground(lightBlue);
+		b1.setFont(new Font("Serif", Font.BOLD, 24));
+		setSize(1000,600);
+		setLayout(null);
+		setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+	}
+	public static void main(String args[]){
+		new Employee();
+	}
+}

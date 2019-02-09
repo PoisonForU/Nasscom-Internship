@@ -1,0 +1,81 @@
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.Vector;
+
+public class Main {
+    public static boolean inrange(int x,int y,int n)
+    {
+        if(x>=0&&x<n&&y>=0&&y<n)
+           return true;
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int n;
+        Scanner sc= new Scanner(System.in);
+        n=sc.nextInt();
+        char c[][]=new char[n][n];
+        int count=0;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {  String x= sc.next();
+              c[i][j]=x.charAt(0);
+                count++;}
+        }
+        int x=0;
+        int y=0;
+        while(true)
+        {     Vector vector=new Vector<>();
+            c[x][y]='N';
+            boolean flag=false;
+            for(int i=x-1;i<=(x+1);i++)
+            {
+                for(int j=y-1;j<=(y+1);j++)
+                {
+                   if(inrange(i,j,n))
+                    {
+                        if(c[i][j]=='R')
+                        {
+                            x=i;
+                            y=j;
+                            flag=true;
+                            break;
+                        }
+                    }
+                }
+                if(flag)
+                    break;
+            }
+            if(!flag)
+            {
+                System.out.println("DESTINATION");
+                break;
+            }
+            else
+            {
+                for(int i=x-1;i<=x+1;i++)
+                {
+                    for(int j=y-1;j<=y+1;j++)
+                    {
+                        if(inrange(i,j,n))
+                        {
+                            if(c[i][j]!='R'&&c[i][j]!='D'&&c[i][j]!='N'&&c[i][j]!='M')
+                                vector.add(c[i][j]);
+                        }
+                    }
+                }
+                Collections.sort(vector);
+                int size=vector.size();
+                { if(size==0)
+                    System.out.print("NO HURDLES");}
+                for(int i=0;i<size;i++)
+                    System.out.print(vector.elementAt(i)+" ");
+                System.out.println();
+
+                vector.clear();
+            }
+        }
+
+    }
+}
